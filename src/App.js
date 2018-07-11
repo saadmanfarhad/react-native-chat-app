@@ -11,6 +11,11 @@ import React, {Component} from 'react';
 import Home from './components/Home';
 import Chat from './components/Chat';
 
+import {
+  Router,
+  Scene
+} from 'react-native-router-flux';
+
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
 const instructions = Platform.select({
@@ -21,14 +26,15 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>Edited App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      <Router>
+        <Scene key = "root" titleStyle = {styles.navigationBarTitleStyle}>
+          <Scene key = "home" component= {Home} title = "Home" titleStyle = {styles.navigationBarTitleStyle}/>
+          <Scene key = "chat" component= {Chat} title = "Chat" titleStyle = {styles.navigationBarTitleStyle}/>
+        </Scene>
+      </Router>
     );
   }
 }
@@ -50,4 +56,11 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  navigationBarTitleStyle: {
+       // centering for Android
+      flex: 1,
+      textAlign: 'center'
+  }
 });
+
+export default App;
