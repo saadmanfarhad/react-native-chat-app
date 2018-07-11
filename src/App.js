@@ -7,6 +7,10 @@
  */
 
 import React, {Component} from 'react';
+
+import Home from './components/Home';
+import Chat from './components/Chat';
+
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
 const instructions = Platform.select({
