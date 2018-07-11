@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import {
-  Action
+  Actions
 } from 'react-native-router-flux';
 
 class Home extends React.Component {
@@ -36,7 +36,7 @@ class Home extends React.Component {
           onPress = {( ) => {
             //navigate and pass the name
             Actions.chat({
-              name: this.state.name
+              username: this.state.name
             });
           }}
         >
