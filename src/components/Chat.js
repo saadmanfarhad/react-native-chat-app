@@ -2,6 +2,8 @@ import React from 'react';
 
 import { GiftedChat } from 'react-native-gifted-chat';
 
+import PropTypes from 'prop-types';
+
 import {
   View,
   Text,
@@ -9,14 +11,14 @@ import {
 
 class Chat extends React.Component {
   state = {
-    messages = []
+    messages : []
   }
   render() {
     return (
       <GiftedChat
         messages= {this.state.messages}
         onSend= {(message) => {
-          
+
         }}
         user={{
           _id: 1,
@@ -31,7 +33,7 @@ Chat.defaultProps = {
 }
 
 Chat.propTypes = {
-  name: React.PropTypes.string,
+  username: PropTypes.string,
 }
 
 export default Chat;
